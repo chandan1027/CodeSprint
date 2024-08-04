@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku Solver</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <!-- Toastr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Sudoku Solver</h1>
+      <div class="controls">
+        <button id="sol" onclick="solveSudoku()">Solve</button>
+        <button class="clr" onclick="clearBoard()">Clear</button>
+        <button id="Hint" onclick="getHint()">Hint</button>
+        <button id="validate" onclick="validateSudoku()">Validate</button>
+        <!-- Replace the existing Toggle Dark Mode button with this HTML -->
+        <label class="switch">
+          <input type="checkbox" id="toggle" onclick="toggleDarkMode()" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="board" id="sudoku-board">
+        <!-- Sudoku board will be generated here -->
+      </div>
+      <div id="time">Time: 0s</div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  </body>
+</html>

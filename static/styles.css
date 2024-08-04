@@ -1,0 +1,389 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#app {
+  text-align: center;
+/*background-image: linear-gradient(90deg,rgb(0, 171, 171),aqua,rgb(160, 255, 255),aqua,rgb(5, 171, 171));*/
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1000);
+  width: 90%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s;
+  width: 100%;
+  max-width: 150px;
+  box-sizing: border-box;
+}
+
+#sol {
+  background-color: #26b548; 
+}
+
+#sol:hover {
+  background-color: #218838;
+}
+
+.clr {
+  background-color: #c32b2b; 
+}
+
+.clr:hover {
+  background-color: #852424;
+}
+
+#Hint {
+  background-color: #ffb507; 
+  color: #000;
+}
+
+#Hint:hover {
+  background-color: #ae9527e2;
+}
+
+#validate {
+  background-color: #17a3b8d6; 
+}
+
+#validate:hover {
+  background-color: #22737feb;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+  margin: 20px 0;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board input {
+  width: 100%;
+  max-width: 42px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #000000e4;
+  box-sizing: border-box;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  
+.board input:nth-child(3n+1) {
+  border-left: 3px solid #48ff5a;
+}
+
+.board input:nth-child(27n+1) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+2) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+3) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+4) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+5) {
+  border-top: 3px solid#48ff5a;
+}
+.board input:nth-child(27n+6) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+7) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+8) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(27n+9) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(-n+3) {
+  border-top: 3px solid #48ff5a;
+}
+.board input:nth-child(9n) {
+  border-right: 3px solid #48ff5a;
+}
+
+.board input:nth-last-child(-n+9) {
+  border-bottom: 3px solid #48ff5a;
+}
+
+
+}
+
+.dark-mode .board input {
+  border-color: #555;
+  background-color: #ffffffdd;
+  color: #000000;
+}
+.dark-mode #app{
+  box-shadow: 0 4px 8px rgb(255, 254, 254);
+}
+.dark-mode #time{
+  color: #000;
+}
+#time {
+  font-size: 18px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgb(37, 37, 37);
+}
+
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 5px;
+  top: 20px;
+  right: 20px;
+  transition: all 0.4s ease;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+input:checked + .slider {
+  background-color: #6c757d;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider:after {
+  content: "OFF";
+  color: rgb(0, 0, 0);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 70%;
+  font-size: 12px;
+}
+
+input:checked + .slider:after {
+  content: "ON";
+  left: 30%;
+}
+
+
+@media (max-width: 768px) {
+  .switch {
+    width: 50px;
+    height: 28px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .slider:before {
+    height: 22px;
+    width: 22px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+
+  .slider:after {
+    font-size: 10px;
+  }
+
+  input:checked + .slider:after {
+    left: 25%;
+  }
+
+  .controls button {
+    padding: 8px 15px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .board input {
+    max-width: 36px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  #app {
+    padding: 15px;
+    width: 95%;
+  }
+
+  #time {
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 15px;
+  }
+}
+
+
+
+.toast-error {
+  background-color: #dc3545; 
+}
+
+.toast-error .toast-message {
+  color: #ffffff;
+}
+
+.toast-error .toast-title {
+  font-weight: bold;
+}
+
+.toast-error .toast-progress {
+  background-color: #ffc107; 
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 2px; /* Small gap between all cells */
+  margin: 20px 45px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board input {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.board input:nth-child(3n+1) {
+  border-left: 3px solid #000;
+}
+
+.board input:nth-child(27n+1) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+2) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+3) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+4) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+5) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+6) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+7) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+8) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(27n+9) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(-n+3) {
+  border-top: 3px solid #000;
+}
+.board input:nth-child(9n) {
+  border-right: 3px solid #000;
+}
+
+.board input:nth-last-child(-n+9) {
+  border-bottom: 3px solid #000;
+}
+
+
+
+@media (max-width: 768px) {
+  .board input {
+    height: 35px;
+  }
+
+  .board {
+    gap: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board input {
+    height: 30px;
+  }
+
+  .board {
+    gap: 1px;
+  }
+}
+
+
