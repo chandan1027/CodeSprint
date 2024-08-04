@@ -387,3 +387,7 @@ input:checked + .slider:after {
 }
 
 
+h5{
+  margin-top: -10px;
+  margin-bottom: -12px;
+}
